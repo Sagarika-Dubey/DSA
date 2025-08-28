@@ -31,7 +31,29 @@ def InsertAtPos(head, data,pos):
     
     return head
 
+def InsertAtVal(head, data,ele):
+    dummy=ListNode(data)
+    temp=head
+    while temp.next:
+        if temp.next.val==ele:
+            break
+        temp=temp.next
+    dummy.next=temp.next
+    temp.next=dummy
+    
+    return head
 
+def InsertAtValAfter(head, data,ele):
+    dummy=ListNode(data)
+    temp=head
+    while temp.next:
+        if temp.val==ele:
+            break
+        temp=temp.next
+    dummy.next=temp.next
+    temp.next=dummy
+    
+    return head
 
 
 def printList(head):
@@ -59,3 +81,5 @@ printList(head)
 printList(InsertAtHead(head, 100))
 printList(InsertAtEnd(head, 20))
 printList(InsertAtPos(head, 50, 3))
+printList(InsertAtVal(head,40,1))
+printList(InsertAtValAfter(head,23,5))
